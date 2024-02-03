@@ -38,11 +38,24 @@ def create_starships(board):
             ship_row, ship_column = randint(0,7), randint(0,7)
         board[ship_row] [ship_column] = 'X'
 
-
-    
-
+# User inputs row and column
 def get_starship_location():
-    pass
+    row = input('please enter ship row: ')
+    while row not in '12345678':
+        print('You must enter a valid row number 1-8')
+        row = input('please enter ship row: ')
+    column = input('please enter ship column: ')
+    while column not in 'ABCDEFGH':
+        print('You must enter a valid column letter A-H')
+        column = input('please enter ship column: ')
+    else:
+        print('You must enter something')
+    return int(row) - 1, letters_to_numbers[column]
+
+
+
+
+
 
 def starship_hit_count():
     pass
