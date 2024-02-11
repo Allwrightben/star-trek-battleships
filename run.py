@@ -171,12 +171,30 @@ def turn(board):
         else:
             board[row][column] = "-"
 
+
 place_ships(COMPUTER_BOARD)
-print_board(COMPUTER_BOARD)
+print_board(COMPUTER_BOARD) #comment this back in for testing purposes.
 print_board(PLAYER_BOARD)
 place_ships(PLAYER_BOARD)
 
-#while True:
+while True:
+    #player turn
+    while True:
+        print('Captain, the enemy has knocked out our sensors, we are blind! Where should we fire?')
+        print_board(PLAYER_GUESS_BOARD)
+        turn(PLAYER_GUESS_BOARD)
+        break
+    if count_hit_ships(PLAYER_GUESS_BOARD) == 17:
+        print("Congratulations Captain! all enemy ships have been destroyed")
+        break
+    #Computer turn
+    while True:
+        turn(COMPUTER_GUESS_BOARD)
+        break
+    print_board(COMPUTER_GUESS_BOARD)
+    if count_hit_ships(COMPUTER_GUESS_BOARD) == 17:
+        print("Captain, we have been defeated!")
+        break
 
 
 
