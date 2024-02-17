@@ -3,6 +3,9 @@
 # '-' for missed shot
 
 import random
+import colorama
+from colorama import Fore, Back, Style
+colorama.init()
 
 # Constants
 LENGTH_OF_SHIPS = [5, 4, 3, 3, 2]
@@ -23,14 +26,19 @@ letters_to_numbers = {
     'H': 7
 }
 
+print(Fore.RED + "Welcome to Star Trek Battleships! \n")
+print("To start the game, you simply place your ships on the board \n")
+print("and then take turns firing at each other's ships. \n")
+
 # Prints given boards to terminal 
 def print_board(board):
-    print('  A B C D E F G H')
+    print(Fore.BLUE + '  A B C D E F G H')
     row_num = 1
     for row in board:
         print("%d|%s|" % (row_num, "|".join(row)))
         row_num += 1
     print('  ----------------')
+    print('\033[39m')
 
 
 # Place all ships of different lengths and make sure they don't overlap
@@ -97,28 +105,25 @@ def ship_overlap(board, row, column, orientation, ship_length):
 def user_input(place_ship):
     if place_ship == True:
         while True:
-            try:
-                orientation = input("Enter orientation horizontal or Vertical (H or V): ").upper()
-                if orientation == "H" or orientation == "V":
-                    break
-            except ValueError:
-                print("Please enter H or V")
+            orientation = input("Enter orientation Horizontal or Vertical (H or V): ").upper()
+            if orientation in ["H", "V"]:
+                break
+            else:
+                print("You must enter H or V to place your ship Horizontally or Vertically")
         while True:
-            try:
-                row = int(input("Enter row number (1-8): ")) - 1
-                if row >= 0 and row <= 7:
+            row = int(input("Enter row number (1-8): ")) - 1
+            if row >= 0 and row <= 7:
                     row = int(row)
                     break
-            except ValueError:
-                print("Please enter a row number between 1-8")
+            else:
+                print("You must enter a row number between 1-8!")
         while True:
-            try:
-                column = input("Enter column letter (A-H): ").upper()
-                if column in "ABCDEFGH":
+            column = input("Enter column letter (A-H): ").upper()
+            if column in "ABCDEFGH":
                     column = letters_to_numbers[column]
                     break
-            except ValueError:
-                print("Please enter a column letter between A-H")
+            else:
+                print("You must enter a column letter between A-H!")
         return row, column, orientation
     else:
         while True:
