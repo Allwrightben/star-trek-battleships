@@ -23,7 +23,7 @@ letters_to_numbers = {
     'H': 7
 }
 
-# Print boards to terminal 
+# Prints given boards to terminal 
 def print_board(board):
     print('  A B C D E F G H')
     row_num = 1
@@ -173,7 +173,8 @@ def turn(board):
 
 
 place_ships(COMPUTER_BOARD)
-print_board(COMPUTER_BOARD) #comment this back in for testing purposes.
+#comment this back in for testing purposes.
+#print_board(COMPUTER_BOARD)
 print_board(PLAYER_BOARD)
 place_ships(PLAYER_BOARD)
 
