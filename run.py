@@ -105,43 +105,52 @@ def ship_overlap(board, row, column, orientation, ship_length):
 def user_input(place_ship):
     if place_ship == True:
         while True:
-            orientation = input("Enter orientation Horizontal or Vertical (H or V): ").upper()
+            orientation = input("Enter orientation Horizontal or Vertical (H or V): ").upper().strip()
             if orientation in ["H", "V"]:
                 break
             else:
-                print("You must enter H or V to place your ship Horizontally or Vertically")
+                print(Fore.YELLOW + "You must enter H or V to place your ship Horizontally or Vertically")
+                print('\033[39m')
         while True:
-            row = int(input("Enter row number (1-8): ")) - 1
-            if row >= 0 and row <= 7:
-                    row = int(row)
+            try:
+                row = int(input("Enter row number (1-8): ")) - 1
+                if row >= 0 and row <= 7:
                     break
-            else:
-                print("You must enter a row number between 1-8!")
+                else:
+                    print(Fore.YELLOW + "You must enter a row number between 1-8!")
+                    print('\033[39m')
+            except ValueError:
+                print(Fore.YELLOW + "Please enter a row number between 1-8")
+                print('\033[39m')
         while True:
-            column = input("Enter column letter (A-H): ").upper()
+            column = input("Enter column letter (A-H): ").upper().strip()
             if column in "ABCDEFGH":
                     column = letters_to_numbers[column]
                     break
             else:
-                print("You must enter a column letter between A-H!")
+                print(Fore.YELLOW + "You must enter a column letter between A-H!")
+                print('\033[39m')
         return row, column, orientation
     else:
         while True:
             try:
                 row = int(input("Enter row number (1-8): ")) - 1
                 if row >= 0 and row <= 7:
-                    row = int(row)
                     break
+                else:
+                    print(Fore.YELLOW + "You must enter a row number between 1-8!")
+                    print('\033[39m')
             except ValueError:
-                print("Please enter a row number between 1-8")
+                print(Fore.YELLOW + "Please enter a row number between 1-8")
+                print('\033[39m')
         while True:
             try:
-                column = input("Enter column letter (A-H): ").upper()
+                column = input("Enter column letter (A-H): ").upper().strip()
                 if column in "ABCDEFGH":
                     column = letters_to_numbers[column]
                     break
-            except ValueError:
-                print("Please enter a column letter between A-H")
+            except:
+                print(Fore.YELLOW + "Please enter a column letter between A-H")
         return row, column
     
 
