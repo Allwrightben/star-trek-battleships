@@ -123,13 +123,18 @@ def user_input(place_ship):
                 print(Fore.YELLOW + "Please enter a row number between 1-8")
                 print('\033[39m')
         while True:
-            column = input("Enter column letter (A-H): ").upper().strip()
-            if column in "ABCDEFGH":
+            try:
+                column = input("Enter column letter (A-H): ").upper().strip()
+                if column in "ABCDEFGH":
                     column = letters_to_numbers[column]
                     break
-            else:
-                print(Fore.YELLOW + "You must enter a column letter between A-H!")
+                else:
+                    print(Fore.YELLOW + "You must enter a column letter between A-H!")
+                    print('\033[39m')
+            except KeyError:
+                print(Fore.YELLOW + "Please enter a column letter between A-H")
                 print('\033[39m')
+            
         return row, column, orientation
     else:
         while True:
@@ -149,8 +154,9 @@ def user_input(place_ship):
                 if column in "ABCDEFGH":
                     column = letters_to_numbers[column]
                     break
-            except:
+            except KeyError:
                 print(Fore.YELLOW + "Please enter a column letter between A-H")
+                print('\033[39m')
         return row, column
     
 
@@ -164,26 +170,32 @@ def count_hit_ships(board):
 
 
 def turn(board):
-    if board == PLAYER_GUESS_BOARD:
-        row, column = user_input(PLAYER_GUESS_BOARD)
-        if board[row][column] == "-":
-            turn(board)
-        elif board[row][column] == "X":
-            turn(board)
-        elif COMPUTER_BOARD[row][column] == "X":
-            board[row][column] = "X"
+    while True: # Start a loop that will continue until a valid move is made
+        if board == PLAYER_GUESS_BOARD:
+            row, column = user_input(PLAYER_GUESS_BOARD)
+            # Check if the move is valid and if it hits or misses
+            if board[row][column] == "-":
+                continue # If the move is valid but misses, continue the loop
+            elif board[row][column] == "X":
+                continue # If the move is valid and hits, continue the loop
+            elif COMPUTER_BOARD[row][column] == "X":
+                board[row][column] = "X"
+                break # If the move hits, break the loop
+            else:
+                board[row][column] = "-"
+                break # If the move misses, break the loop
         else:
-            board[row][column] = "-"
-    else:
-        row, column = random.randint(0, 7), random.randint(0, 7)
-        if board[row][column] == "-":
-            turn(board)
-        elif board[row][column] == "X":
-            turn(board)
-        elif PLAYER_BOARD[row][column] == "X":
-            board[row][column] = "X"
-        else:
-            board[row][column] = "-"
+            row, column = random.randint(0, 7), random.randint(0, 7)
+            if board[row][column] == "-":
+                continue
+            elif board[row][column] == "X":
+                continue
+            elif PLAYER_BOARD[row][column] == "X":
+                board[row][column] = "X"
+                break
+            else:
+                board[row][column] = "-"
+                break
 
 
 place_ships(COMPUTER_BOARD)
