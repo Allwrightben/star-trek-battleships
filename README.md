@@ -1,6 +1,6 @@
 <h1>Star Trek Battleships</h1>
 
-![picture of the website in a responsive context](assets/images/documentation/mainresponsive.png)
+![picture of the project in a responsive context](documentation/responsive.PNG)
 
 ## Overview
 
@@ -50,6 +50,7 @@ link to the game https://star-trek-battleships-ae86cac7948c.herokuapp.com/
 
 - The Board will be printed and the player will choose where to place their ships
 <br>
+- The computer will also randomly place thier ships
 
 ![Picture of how to place ships](documentation/placehips.PNG)
 
@@ -58,105 +59,55 @@ link to the game https://star-trek-battleships-ae86cac7948c.herokuapp.com/
 
 ![Picture of what happens if entry is invalid](documentation/invalid.PNG)
 
-- Once all ships are placed The user will be asked to choose a row and column to fire at.
+- Once all ships are placed the user can see their board and the computer board and will be asked to choose a row and column to fire at on the computer board.
 <br>
+- The computer will fire at random locations after each player turn. The computer cannot fire where they have fired already.
 
-![Picture of the rules button to the right of the website](assets/images/documentation/starwarsright.png)
+![Picture of user chooses where to fire](documentation/choosecelltofireat.PNG)
 
-![Picture of the rules](assets/images/documentation/rules.png)
+- Once either the computer or the player has destroyed all ships (17 hits) the game is over
 
-- When the user clicks start it will show the first question.
-- The user will also see their score in the bottom left.
-- The user will also see how many questions they have remaining in the bottom right
-<br>
+![Picture of the player winning the game](documentation/congratulations.PNG)
+![Picture of the player winning the game](documentation/defeat.PNG)
 
-![Picture of the quiz started](assets/images/documentation/start.png)
+## Flowchart
 
-- All of the buttons on the site offer the user feedback with on-hover animations and pointers.
-- within the quiz, the user will get instant feedback for a correct answer.
-- The user will also now only be able to click the next button as all the answer buttons are disabled.
-- The user will see that their score has increased by 1, and they now only have 9 questions remaining. 
-<br>
+- The flowchart represents the logic of the application:
 
-![Picture of a correct answer](assets/images/documentation/next.png)
+![Picture of the player winning the game](documentation/lucidflowchart.PNG)
 
-- The user will also get feedback for an incorrect answer.
-- the user will see that the answer they selected is now red, indicating that it was a wrong answer, and they didn't get a point and they have one less question to answer.
-<br>
-
-![Picture of a wrong answer](assets/images/documentation/wrong.png)
-
-- Each time the user selects one of four answers the correct answer will turn green and all other answers will be red.
-
-- Using the site is intuitive and easy to understand.
-- The website is responsive.
-  - on laptop screen sizes and larger, the website will feature larger text and buttons.
-  - on tablet screen sizes and smaller, the website text and buttons will be smaller.
 
 ## Technologies Used
 
-- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) was used as the foundation of the site.
-- [CSS](https://developer.mozilla.org/en-US/docs/Web/css) was used to add the styles and layout of the site.
-- [CSS Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox) was used to arrange items symmetrically on the pages.
-- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) was used to create all the logic and visuals necessary to make the quiz work.
+- [Python 3.8.5](https://www.python.org/downloads/release/python-385/) was used to anchor the project and direct all application behavior
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) was used to construct the elements involved in building the mock terminal in the browser
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) was used provide the start script needed to run the Code Institute mock terminal in the browser
 - [VSCode](https://code.visualstudio.com/) was used as the main tool to write and edit code.
-- [Git](https://git-scm.com/) was used for the version control of the website.
-- [GitHub](https://github.com/) was used to host the code of the website.
+- [Git](https://git-scm.com/) was used for the version control of the project.
+- [Heroku](https://dashboard.heroku.com/apps) was used to deploy the project.
+
+## Imports
+
+- [random](https://docs.python.org/3/library/random.html) was used for the computer to randomly place ships and randomly fire across the player board.
+
+Third part import:
+- [colorama](https://pypi.org/project/colorama/) was used to add some colour to the project.
+
+
+## Bugs
+
+Solved bugs:
+- Had many issues with the input errors where if the user entered something
+unexpected it could crash the whole program.
+- one was due to the user entering nothing, and then nothing cannot be converted
+into an integer and since the break/except criteria was not met it cause an infinity loop.
+- Similarly if the user entered anything but a letter for column, this could then not be passed through the numbers_to_letters function and crashed the program.
+these bugs were fixed by using try/except statements where another other that what was expected will simply ask for the valid data again.
+
 
 ## Testing
 
-<h3>Compatability</h3>
 
-In order to confirm the correct functionality, responsiveness and appearance:
-- The website was tested on Chrome and Edge web browsers, using in-built dev tools.
-  - Chrome:
-  ![picture of the website being tested in Chrome](assets/images/documentation/chrome1.png)
-  ![picture of the website being tested in Chrome](assets/images/documentation/chrome2.png)
-  ![picture of the website being tested in Chrome](assets/images/documentation/chrome3.png)
-  ![picture of the website being tested in Chrome](assets/images/documentation/chrome4.png)
-  ![picture of the website being tested in Chrome](assets/images/documentation/chrome5.png)
-
-  - Edge:
-  ![picture of the website being tested in Edge](assets/images/documentation/edge1.png)
-  ![picture of the website being tested in Edge](assets/images/documentation/edge2.png)
-  ![picture of the website being tested in Edge](assets/images/documentation/edge3.png)
-  ![picture of the website being tested in Edge](assets/images/documentation/edge4.png)
-  ![picture of the website being tested in Edge](assets/images/documentation/edge5.png)
-
-- The website was also tested using the Chrome extension [Responsive Viewer](https://chromewebstore.google.com/detail/responsive-viewer/inmopeiepgfljkpkidclfgbgbmfcennb?pli=1)
-    ![picture of responsive viewer on small devices](assets/images/documentation/responsiveviewer1.png)
-    ![picture of responsive viewer on larger devices](assets/images/documentation/responsiveviewer2.png) 
-
-- The website's responsiveness was tested using Media Genesis Responsive design checker
-https://responsivedesignchecker.com/
-<br>
-
-![picture of the responisveness checker](assets/images/documentation/genesis1.png)
-
-![picture of the responisveness checker](assets/images/documentation/genesis2.png)
-
-![picture of the responisveness checker](assets/images/documentation/genesis3.png)
-
-- The HTML file has passed HTML validity checks with W3C.
-<br>
-
-![Picture of main page HTML pass](assets/images/documentation/w3c.png)
-
-- The CSS file has also passed CSS validity check with W3C.
-<br>
-
-![Picture of CSS File page pass](assets/images/documentation/w3ccss.png)
-
-- The JavaScript was tested for errors using JShint
-<br>
-
-![Picture of JShint results](assets/images/documentation/jshint.png)
-
-- Lighthouse
-  - The website has been tested for performance, accessibility, best practice and SEO.<br>
-
-![Picture of lighthouse analysis](assets/images/documentation/lighthouse.png)
-    
 
 ## Deployment
 
