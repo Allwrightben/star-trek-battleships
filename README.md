@@ -1,6 +1,6 @@
 <h1>Star Trek Battleships</h1>
 
-![picture of the project in a responsive context](documentation/responsive.PNG)
+![picture of the project in a responsive context](documentation/responsive.png)
 
 ## Overview
 
@@ -46,35 +46,36 @@ link to the game https://star-trek-battleships-ae86cac7948c.herokuapp.com/
 - The user can see a welcome message with promps on how to get started.
 <br>
 
-![Picture of the welcome message](documentation/welcome.PNG)
+![Picture of the welcome message](documentation/welcome.png)
 
 - The Board will be printed and the player will choose where to place their ships
 <br>
 - The computer will also randomly place thier ships
 
-![Picture of how to place ships](documentation/placehips.PNG)
+![Picture of how to place ships](documentation/placehips.png)
 
 - If the player enters nothing, enters something invalid or enters a position that overlaps with other ships or the edge of the board, they will be asked to try again.
 <br>
 
-![Picture of what happens if entry is invalid](documentation/invalid.PNG)
+![Picture of what happens if entry is invalid](documentation/invalid.png)
 
 - Once all ships are placed the user can see their board and the computer board and will be asked to choose a row and column to fire at on the computer board.
 <br>
 - The computer will fire at random locations after each player turn. The computer cannot fire where they have fired already.
 
-![Picture of user chooses where to fire](documentation/choosecelltofireat.PNG)
+![Picture of user chooses where to fire](documentation/choosecelltofireat.png)
 
 - Once either the computer or the player has destroyed all ships (17 hits) the game is over
 
-![Picture of the player winning the game](documentation/congratulations.PNG)
-![Picture of the player winning the game](documentation/defeat.PNG)
+![Picture of the player winning the game](documentation/congratulations.png)
+
+![Picture of the player computer the game](documentation/defeat.png)
 
 ## Flowchart
 
 - The flowchart represents the logic of the application:
 
-![Picture of the player winning the game](documentation/lucidflowchart.PNG)
+![Picture of the player winning the game](documentation/lucidflowchart.png)
 
 
 ## Technologies Used
