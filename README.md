@@ -46,36 +46,36 @@ link to the game https://star-trek-battleships-ae86cac7948c.herokuapp.com/
 - The user can see a welcome message with promps on how to get started.
 <br>
 
-![Picture of the welcome message](documentation/welcome.png)
+![Picture of the welcome message](documentation/welcome1.png)
 
 - The Board will be printed and the player will choose where to place their ships
 <br>
 - The computer will also randomly place thier ships
 
-![Picture of how to place ships](documentation/placehips.png)
+![Picture of how to place ships](documentation/placehips2.png)
 
 - If the player enters nothing, enters something invalid or enters a position that overlaps with other ships or the edge of the board, they will be asked to try again.
 <br>
 
-![Picture of what happens if entry is invalid](documentation/invalid.png)
+![Picture of what happens if entry is invalid](documentation/invalid2.png)
 
 - Once all ships are placed the user can see their board and the computer board and will be asked to choose a row and column to fire at on the computer board.
 <br>
 - The computer will fire at random locations after each player turn. The computer cannot fire where they have fired already.
 
-![Picture of user chooses where to fire](documentation/choosecelltofireat.png)
+![Picture of user chooses where to fire](documentation/choosecelltofireat2.png)
 
 - Once either the computer or the player has destroyed all ships (17 hits) the game is over
 
-![Picture of the player winning the game](documentation/congratulations.png)
+![Picture of the player winning the game](documentation/congratulations2.png)
 
-![Picture of the player computer the game](documentation/defeat.png)
+![Picture of the player computer the game](documentation/defeat2.png)
 
 ## Flowchart
 
 - The flowchart represents the logic of the application:
 
-![Picture of the player winning the game](documentation/lucidflowchart.png)
+![Picture of the player winning the game](documentation/lucidflowchart2.png)
 
 
 ## Technologies Used
