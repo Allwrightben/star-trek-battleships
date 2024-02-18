@@ -28,7 +28,8 @@ letters_to_numbers = {
 
 print(Fore.RED + "Welcome to Star Trek Battleships! \n")
 print("To start the game, you simply place your ships on the board \n")
-print("and then take turns firing at each other's ships. \n")
+print("Then take turns firing at each other's ships. \n")
+print("The first to destroy all the enemy ships (17 hits) wins! \n")
 
 # Prints given boards to terminal 
 def print_board(board):
@@ -207,7 +208,7 @@ place_ships(PLAYER_BOARD)
 while True:
     #player turn
     while True:
-        print('Captain, the enemy has knocked out our sensors, we are blind! Where should we fire?')
+        print("Captain, they've knocked out our sensors, Where should we fire?")
         print_board(PLAYER_GUESS_BOARD)
         turn(PLAYER_GUESS_BOARD)
         break
