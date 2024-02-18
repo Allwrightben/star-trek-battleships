@@ -1,6 +1,6 @@
 <h1>Star Trek Battleships</h1>
 
-![picture of the project in a responsive context](documentation/responsive.png)
+![picture of the project in a responsive context](documentation/response.png)
 
 ## Overview
 
