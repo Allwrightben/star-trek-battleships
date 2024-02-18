@@ -122,8 +122,8 @@ def user_input(place_ship):
             if orientation in ["H", "V"]:
                 break
             else:
-                print(Fore.YELLOW +
-                      "You must enter H or V to place your ship")
+                print(f"""
+{Fore.YELLOW}You must enter H or V to place your ship{Fore.RESET}""")
                 print('\033[39m')
         while True:
             try:
@@ -226,14 +226,16 @@ def main():
         # player turn
         while True:
             print(
-f"""Captain, they've knocked out our sensors, Where should we fire?
+                f"""Captain, they've knocked out our sensors,
+                Where should we fire?
 {print_board(PLAYER_GUESS_BOARD)}"""
             )
             turn(PLAYER_GUESS_BOARD)
             break
         if count_hit_ships(PLAYER_GUESS_BOARD) == 17:
             print(
-f"""Congratulations Captain, we've destroyed all enemy ships!"""
+                f"""Congratulations Captain,
+                we've destroyed all enemy ships!"""
             )
             break
         # Computer turn
