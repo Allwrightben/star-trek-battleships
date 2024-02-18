@@ -35,7 +35,7 @@ def main_welcome():
     print("The first to destroy all ships (17 hits) wins! \n")
 
 
-# Prints given boards to terminal
+"""Prints given boards to terminal."""
 def print_board(board):
     print(Fore.BLUE + '  A B C D E F G H')
     row_num = 1
@@ -46,7 +46,7 @@ def print_board(board):
     print({Fore.RESET})
 
 
-# Place all ships of different lengths and make sure they don't overlap
+"""Place all ships of different lengths and make sure they don't overlap"""
 def place_ships(board):
     # Loop through each ship length
     for ship_length in LENGTH_OF_SHIPS:
@@ -86,7 +86,7 @@ def place_ships(board):
                         print_board(PLAYER_BOARD)
                         break
 
-
+"""Check if ship fits on the board"""
 def check_ship_fit(SHIP_LENGTH, row, column, orientation):
     if orientation == "H":
         if column + SHIP_LENGTH > 8:
@@ -99,7 +99,7 @@ def check_ship_fit(SHIP_LENGTH, row, column, orientation):
         else:
             return True
 
-
+"""Check if ship overlaps with another ship"""
 def ship_overlap(board, row, column, orientation, ship_length):
     if orientation == "H":
         for i in range(column, column + ship_length):
@@ -111,7 +111,7 @@ def ship_overlap(board, row, column, orientation, ship_length):
                 return True
     return False
 
-
+"""Get user input for placing ships"""
 def user_input(place_ship):
     if place_ship is True:
         while True:
@@ -175,7 +175,7 @@ def user_input(place_ship):
                 print('\033[39m')
         return row, column
 
-
+"""Count the number of hits on the board"""
 def count_hit_ships(board):
     count = 0
     for row in board:
@@ -184,7 +184,7 @@ def count_hit_ships(board):
                 count += 1
     return count
 
-
+"""Take a turn and check if it hits or misses"""
 def turn(board):
     while True:  # Start a loop that will continue until a valid move is made
         if board == PLAYER_GUESS_BOARD:
@@ -213,7 +213,7 @@ def turn(board):
                 board[row][column] = "-"
                 break
 
-
+"""Main function to run the game"""
 def main():
     main_welcome()
     place_ships(COMPUTER_BOARD)

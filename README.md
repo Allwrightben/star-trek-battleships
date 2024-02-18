@@ -75,7 +75,7 @@ link to the game https://star-trek-battleships-ae86cac7948c.herokuapp.com/
 
 - The flowchart represents the logic of the application:
 
-![Picture of the player winning the game](documentation/lucidflowchart2.png)
+![Picture of the flow chart to start the project](documentation/lucidflowchart2.png)
 
 
 ## Technologies Used
@@ -108,18 +108,19 @@ these bugs were fixed by using try/except statements where another other that wh
 
 ## Testing
 
+- All python code has been tested to PEP8 requirements with CI Python Linter
+
+![Picture of CI Python Linter results](documentation/pep8.png)
+
+- Testing also done by myself and coleagues trying to break the program which is how some of the bugs we found and fixed. 
+
+
 
 
 ## Deployment
 
-### Deployment to GitHub Pages
-
-- The site was deployed to GitHub pages. The steps to deploy are as follows: 
-  - In the [GitHub repository](https://github.com/Allwrightben/starquiz), navigate to the Settings tab 
-  - From the source section drop-down menu, select the **Main** Branch, then click "Save".
-  - The page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
-
-  The live link can be found [here](https://allwrightben.github.io/starquiz/)
+- The program was deployed to [Heroku](https://dashboard.heroku.com/apps)
+- The game can be found deployed on Heroku with this [Link](https://star-trek-battleships-ae86cac7948c.herokuapp.com/) or by pasting the folloing into your web browser https://star-trek-battleships-ae86cac7948c.herokuapp.com/
 
 ## Contact
 
@@ -132,12 +133,12 @@ Feel free to reach out if you have any questions or feedback! Thank you for visi
 
 - <h3>Inspiration</h3>
 
-  - The Love Math project and JavaScript modules gave me a lot of inspiration.
+  - The Love Sandwiches project and Python modules gave me a lot of inspiration.
+  and building blocks I needed.
   - My mentor Juliia I must say has been amazing, far beyond what I would have expected :)
 
 - <h3>Media</h3>
 
-- The website features one background image sourced from https://unsplash.com/
 
 
 
