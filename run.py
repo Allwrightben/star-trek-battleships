@@ -43,7 +43,7 @@ def print_board(board):
         print("%d|%s|" % (row_num, "|".join(row)))
         row_num += 1
     print('  ----------------')
-    print({Fore.RESET})
+    print(Fore.RESET)
 
 
 """Place all ships of different lengths and make sure they don't overlap"""
