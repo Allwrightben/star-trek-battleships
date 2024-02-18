@@ -115,19 +115,57 @@ these bugs were fixed by using try/except statements where another other that wh
 - Testing also done by myself and coleagues trying to break the program which is how some of the bugs we found and fixed. 
 
 
-
-
 ## Deployment
 
 - The program was deployed to [Heroku](https://dashboard.heroku.com/apps)
 - The game can be found deployed on Heroku with this [Link](https://star-trek-battleships-ae86cac7948c.herokuapp.com/) or by pasting the folloing into your web browser https://star-trek-battleships-ae86cac7948c.herokuapp.com/
+
+### To deploy the project as an application that can be run locally:
+
+Note:
+
+This project requires you to have Python installed on your local PC:
+sudo apt install python3
+You will also need pip installed to allow the installation of modules the application uses.
+sudo apt install python3-pip
+Create a local copy of the GitHub repository by following one of the two processes below:
+
+Download ZIP file:
+
+Go to the GitHub Repo page.
+Click the Code button and download the ZIP file containing the project.
+Extract the ZIP file to a location on your PC.
+Clone the repository:
+
+Open a folder on your computer with the terminal.
+Run the following command
+git clone https://github.com/Allwrightben/star-trek-battleships
+
+### To deploy the project to Heroku so it can be run as a remote web application:
+
+- Create a Heroku account if you don't already have one here Heroku.
+- Create a new Heroku application
+- Go to the Deploy tab:
+  - Link your GitHub account and connect the application to the repository you created.
+- Go to the Settings tab:
+  - Click "Add buildpack":
+  - Add the Python and Node.js buildpacks in this order
+  - Click "Reveal Config Vars."
+  - Add 1 new Config Vars:
+    - Key: PORT Value: 8000
+    - This Config was provided by CODE INSTITUTE.
+- Go back to the Deploy tab:
+  - Click "Deploy Branch":
+  - Wait for the completion of the deployment.
+  - Click "Open app" to launch the application inside a web page.
 
 ## Contact
 
 Ben Allwright<br>
 ben.allwright@learningpeople.co.uk
 
-Feel free to reach out if you have any questions or feedback! Thank you for visiting<br> https://github.com/Allwrightben/starquiz
+Feel free to reach out if you have any questions or feedback! Thank you for
+playing my game :)
 
 ## Credits
 
